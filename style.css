@@ -2,13 +2,16 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  font-size: large;
   line-height: 1.6;
+  color: black;
 }
 
 header {
-  background-color: #003366;
+  background-color: #064788;
   color: white;
   padding: 20px;
+  
   text-align: center;
 }
 
@@ -19,8 +22,27 @@ nav a {
 }
 
 main {
+  position: relative;
   padding: 20px;
+  z-index: 1; /* ensure main content stays on top */
 }
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('hamburg-port-container-ship.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 0; /* stays behind text */
+  pointer-events: none;
+}
+
 
 section {
   margin-bottom: 40px;
